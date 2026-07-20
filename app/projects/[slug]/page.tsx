@@ -74,7 +74,7 @@ export default function ProjectDetailPage({ params }: Props) {
           </div>
 
           {/* Links */}
-          {(project.liveUrl || project.repoUrl) && (
+          {(project.liveUrl || project.liveUrlSecondary || project.repoUrl) && (
             <div className="mt-6 flex flex-wrap gap-3">
               {project.liveUrl && (
                 <a
@@ -84,7 +84,18 @@ export default function ProjectDetailPage({ params }: Props) {
                   className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-dark"
                 >
                   <ExternalLink size={16} />
-                  Live Demo
+                  {project.liveUrlSecondary ? 'Customer Site' : 'Live Demo'}
+                </a>
+              )}
+              {project.liveUrlSecondary && (
+                <a
+                  href={project.liveUrlSecondary}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-accent px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent hover:text-white"
+                >
+                  <ExternalLink size={16} />
+                  Supplier Site
                 </a>
               )}
               {project.repoUrl && (

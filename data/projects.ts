@@ -9,6 +9,8 @@ export type Project = {
   image: string;
   techStack: string[];
   liveUrl?: string;
+  /** Optional secondary live URL, e.g. a separate supplier/admin portal for the same project. */
+  liveUrlSecondary?: string;
   repoUrl?: string;
   featured: boolean;
   /** Your role in the project, e.g. "Full-Stack Developer". */
@@ -36,7 +38,8 @@ export const projects: Project[] = [
     ],
     image: '/images/project-1.svg',
     techStack: ['Next.js', 'React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Socket.IO', 'MongoDB', 'Amazon Bedrock'],
-    liveUrl: 'https://hb-web-psi.vercel.app/',
+    liveUrl: 'https://honeybee-fe.vercel.app/',
+    liveUrlSecondary: 'https://honeybee-khaki.vercel.app/',
     repoUrl: '',
     featured: true,
     role: 'Full-Stack Developer',

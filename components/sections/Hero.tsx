@@ -8,12 +8,12 @@ export function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden pt-16"
     >
       {/* Base gradient background */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/60" />
+      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/60 dark:from-gray-900 dark:via-gray-800/60 dark:to-indigo-950/60" />
 
       {/* Decorative gradient blobs */}
-      <div className="absolute -top-32 -left-32 -z-10 h-96 w-96 rounded-full bg-blue-300/40 blur-3xl" />
-      <div className="absolute top-1/3 -right-32 -z-10 h-96 w-96 rounded-full bg-indigo-300/40 blur-3xl" />
-      <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-purple-200/30 blur-3xl" />
+      <div className="absolute -top-32 -left-32 -z-10 h-96 w-96 rounded-full bg-blue-300/40 blur-3xl dark:bg-blue-900/40" />
+      <div className="absolute top-1/3 -right-32 -z-10 h-96 w-96 rounded-full bg-indigo-300/40 blur-3xl dark:bg-indigo-900/40" />
+      <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-purple-200/30 blur-3xl dark:bg-purple-950/40" />
 
       {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)]" />
@@ -30,13 +30,13 @@ export function Hero() {
           </div>
 
           <p className="mt-6 text-base font-medium text-accent">Hi there, I'm</p>
-          <h1 className="mt-2 text-5xl font-bold tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
+          <h1 className="mt-2 text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl lg:text-7xl">
             {profile.name}
           </h1>
           <h2 className="mt-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-2xl font-semibold text-transparent md:text-3xl">
             {profile.title}
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-600 md:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-600 dark:text-gray-300 md:text-lg">
             {profile.tagline}
           </p>
 
@@ -51,7 +51,7 @@ export function Hero() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm backdrop-blur-sm transition hover:border-accent hover:text-accent"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm backdrop-blur-sm transition hover:border-accent hover:text-accent dark:border-gray-700 dark:bg-gray-800/80 dark:text-white dark:hover:border-accent"
             >
               <Mail size={16} />
               Contact Me
@@ -65,7 +65,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="GitHub"
-                className="text-gray-600 transition hover:text-accent"
+                className="text-gray-600 transition hover:text-accent dark:text-gray-300"
               >
                 <Github size={22} />
               </a>
@@ -76,7 +76,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="LinkedIn"
-                className="text-gray-600 transition hover:text-accent"
+                className="text-gray-600 transition hover:text-accent dark:text-gray-300"
               >
                 <Linkedin size={22} />
               </a>
@@ -87,14 +87,14 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Instagram"
-                className="text-gray-600 transition hover:text-accent"
+                className="text-gray-600 transition hover:text-accent dark:text-gray-300"
               >
                 <Instagram size={22} />
               </a>
             )}
           </div>
 
-          <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
+          <div className="mt-6 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
             <MapPin size={14} />
             <span>{profile.location}</span>
           </div>

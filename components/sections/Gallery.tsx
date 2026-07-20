@@ -107,7 +107,7 @@ export function Gallery() {
 
   if (isEmpty) {
     return (
-      <section id="gallery" className="bg-white py-20 md:py-28">
+      <section id="gallery" className="bg-white py-20 dark:bg-gray-900 md:py-28">
         <div className="container-narrow">
           <SectionTitle
             title="Gallery"
@@ -125,7 +125,7 @@ export function Gallery() {
   }
 
   return (
-    <section id="gallery" className="bg-white py-20 md:py-28">
+    <section id="gallery" className="bg-white py-20 dark:bg-gray-900 md:py-28">
       <div className="container-narrow">
         <SectionTitle
           title="Gallery"
@@ -137,7 +137,7 @@ export function Gallery() {
           <div className="relative">
             <div
               ref={scrollRef}
-              className="flex snap-x snap-mandatory gap-4 overflow-x-auto rounded-2xl bg-gray-100 p-3 shadow-lg [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              className="flex snap-x snap-mandatory gap-4 overflow-x-auto rounded-2xl bg-gray-100 p-3 shadow-lg [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden dark:bg-gray-800"
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
@@ -197,7 +197,7 @@ export function Gallery() {
 
           {/* Counter */}
           <div className="mt-4 flex items-center justify-center">
-            <span className="text-xs font-medium text-gray-500">
+            <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
               {current + 1}–{Math.min(current + itemsPerView, total)} / {total}
             </span>
           </div>
@@ -216,7 +216,7 @@ export function Gallery() {
                     className={`h-2 rounded-full transition-all ${
                       pageStart === current
                         ? 'w-6 bg-blue-600'
-                        : 'w-2 bg-gray-300 hover:bg-gray-400'
+                        : 'w-2 bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500'
                     }`}
                   />
                 );

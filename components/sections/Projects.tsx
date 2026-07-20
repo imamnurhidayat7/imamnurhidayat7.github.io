@@ -6,7 +6,7 @@ import { projects } from '@/data/projects';
 
 export function Projects() {
   return (
-    <section id="projects" className="bg-gray-50 py-20 md:py-28">
+    <section id="projects" className="bg-gray-50 py-20 dark:bg-gray-900 md:py-28">
       <div className="container-narrow">
         <SectionTitle
           title="Projects"
@@ -17,11 +17,11 @@ export function Projects() {
           {projects.map((project) => (
             <article
               key={project.slug}
-              className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-lg"
+              className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
             >
               <Link
                 href={`/projects/${project.slug}`}
-                className="relative block aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100"
+                className="relative block aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100 dark:from-blue-950 dark:to-gray-900"
               >
                 <div className="flex h-full items-center justify-center text-gray-400">
                   <Folder size={48} />
@@ -30,11 +30,11 @@ export function Projects() {
 
               <div className="flex flex-1 flex-col p-6">
                 <Link href={`/projects/${project.slug}`}>
-                  <h3 className="text-lg font-semibold text-gray-900 transition group-hover:text-accent">
+                  <h3 className="text-lg font-semibold text-gray-900 transition group-hover:text-accent dark:text-white">
                     {project.title}
                   </h3>
                 </Link>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                   {project.description}
                 </p>
 
@@ -57,7 +57,7 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 transition hover:text-accent"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 transition hover:text-accent dark:text-gray-200"
                     >
                       <ExternalLink size={14} />
                       Live Demo
@@ -68,7 +68,7 @@ export function Projects() {
                       href={project.repoUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 transition hover:text-accent"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 transition hover:text-accent dark:text-gray-200"
                     >
                       <Github size={14} />
                       Source
