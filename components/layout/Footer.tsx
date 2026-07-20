@@ -13,33 +13,39 @@ export function Footer() {
           </p>
 
           <div className="flex items-center gap-4">
-            <a
-              href={profile.social.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="GitHub"
-              className="text-gray-500 transition hover:text-accent"
-            >
-              <Github size={18} />
-            </a>
-            <a
-              href={profile.social.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="LinkedIn"
-              className="text-gray-500 transition hover:text-accent"
-            >
-              <Linkedin size={18} />
-            </a>
-            <a
-              href={profile.social.instagram}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Instagram"
-              className="text-gray-500 transition hover:text-accent"
-            >
-              <Instagram size={18} />
-            </a>
+            {profile.social.github && (
+              <a
+                href={profile.social.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="GitHub"
+                className="text-gray-500 transition hover:text-accent"
+              >
+                <Github size={18} />
+              </a>
+            )}
+            {profile.social.linkedin && (
+              <a
+                href={profile.social.linkedin}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="LinkedIn"
+                className="text-gray-500 transition hover:text-accent"
+              >
+                <Linkedin size={18} />
+              </a>
+            )}
+            {profile.social.instagram && (
+              <a
+                href={profile.social.instagram}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Instagram"
+                className="text-gray-500 transition hover:text-accent"
+              >
+                <Instagram size={18} />
+              </a>
+            )}
           </div>
 
           <p className="text-xs text-gray-500">

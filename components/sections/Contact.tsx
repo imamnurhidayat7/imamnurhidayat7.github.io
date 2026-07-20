@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Instagram, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, Send, Phone, MapPin } from 'lucide-react';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { profile } from '@/data/profile';
 
@@ -29,38 +29,59 @@ export function Contact() {
               {profile.email}
             </a>
 
+            {profile.phone && (
+              <a
+                href={`tel:${profile.phone.replace(/\s+/g, '')}`}
+                className="mt-3 flex items-center gap-2 text-sm text-gray-700 transition hover:text-accent"
+              >
+                <Phone size={16} />
+                {profile.phone}
+              </a>
+            )}
+
+            <div className="mt-3 flex items-center gap-2 text-sm text-gray-700">
+              <MapPin size={16} />
+              {profile.location}
+            </div>
+
             <div className="mt-6">
               <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
                 Find me on
               </p>
               <div className="mt-3 flex items-center gap-3">
-                <a
-                  href={profile.social.github}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="GitHub"
-                  className="rounded-md bg-white p-2.5 text-gray-700 ring-1 ring-gray-200 transition hover:text-accent hover:ring-accent"
-                >
-                  <Github size={18} />
-                </a>
-                <a
-                  href={profile.social.linkedin}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="LinkedIn"
-                  className="rounded-md bg-white p-2.5 text-gray-700 ring-1 ring-gray-200 transition hover:text-accent hover:ring-accent"
-                >
-                  <Linkedin size={18} />
-                </a>
-                <a
-                  href={profile.social.instagram}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="Instagram"
-                  className="rounded-md bg-white p-2.5 text-gray-700 ring-1 ring-gray-200 transition hover:text-accent hover:ring-accent"
-                >
-                  <Instagram size={18} />
-                </a>
+                {profile.social.github && (
+                  <a
+                    href={profile.social.github}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="GitHub"
+                    className="rounded-md bg-white p-2.5 text-gray-700 ring-1 ring-gray-200 transition hover:text-accent"
+                  >
+                    <Github size={18} />
+                  </a>
+                )}
+                {profile.social.linkedin && (
+                  <a
+                    href={profile.social.linkedin}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="LinkedIn"
+                    className="rounded-md bg-white p-2.5 text-gray-700 ring-1 ring-gray-200 transition hover:text-accent"
+                  >
+                    <Linkedin size={18} />
+                  </a>
+                )}
+                {profile.social.instagram && (
+                  <a
+                    href={profile.social.instagram}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Instagram"
+                    className="rounded-md bg-white p-2.5 text-gray-700 ring-1 ring-gray-200 transition hover:text-accent"
+                  >
+                    <Instagram size={18} />
+                  </a>
+                )}
               </div>
             </div>
           </div>

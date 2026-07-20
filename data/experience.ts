@@ -8,42 +8,69 @@ export type Experience = {
   techStack: string[];
 };
 
+export type Education = {
+  degree: string;
+  institution: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+  techStack: string[];
+};
+
 export const experiences: Experience[] = [
   {
-    role: 'Full-Stack Developer Intern',
-    company: 'Tech Company',
-    location: 'Remote',
-    startDate: 'Jan 2024',
-    endDate: 'Present',
+    role: 'Software Developer',
+    company: 'Ministry of Agrarian and Spatial Planning / National Land Agency',
+    location: 'Indonesia',
+    startDate: 'May 2022',
+    endDate: 'Feb 2026',
     description: [
-      'Built and shipped 3 customer-facing features used by 5,000+ users',
-      'Refactored legacy authentication flow, reducing login time by 40%',
-      'Collaborated with designers and PMs to define product requirements',
+      "Delivered and maintained modules for Indonesia's Electronic Land Certificate platform, a secure large-scale government digital service with 24/7 availability requirements.",
+      'Built and maintained full-stack features and services, translating policy and operational requirements into reliable digital workflows in close collaboration with stakeholders.',
+      'Developed and optimised Oracle SQL queries and data workflows to improve performance, reliability, and data integrity in production environments.',
+      'Supported 24/7 service reliability through incident triage, root-cause analysis, and cross-team coordination to restore service and prevent recurrence.',
+      'Applied QA-minded delivery practices including test planning, regression testing, and code review to reduce release risk and improve software quality.',
+      'Used LLM tools to accelerate debugging, documentation, and test case drafting, with manual validation aligned to government security and compliance requirements.',
     ],
-    techStack: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    techStack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'Oracle', 'PostgreSQL', 'Laravel', 'WordPress'],
   },
   {
-    role: 'Frontend Developer',
-    company: 'University Organization',
+    role: 'Web Developer',
+    company: 'Sarana Solusindo Informatika',
     location: 'Indonesia',
-    startDate: 'Aug 2023',
-    endDate: 'Dec 2023',
+    startDate: '2019',
+    endDate: '2022',
     description: [
-      'Designed and developed the official website for a student organization of 500+ members',
-      'Implemented responsive design and accessibility best practices',
+      'Built and maintained internal company web applications and business tools using Laravel, tailored to operational requirements across departments.',
+      'Developed and maintained WordPress-based sites, working directly with stakeholders to translate business needs into functioning web tools.',
     ],
-    techStack: ['React', 'Tailwind CSS', 'JavaScript'],
+    techStack: ['PHP', 'Laravel', 'WordPress', 'JavaScript', 'MySQL'],
+  },
+];
+
+export const education: Education[] = [
+  {
+    degree: 'Master of Information Technology',
+    institution: 'University of Auckland',
+    location: 'New Zealand',
+    startDate: '2025',
+    endDate: 'Expected 2027',
+    description: [
+      'Currently pursuing a Master of Information Technology at the University of Auckland.',
+      'Coursework and projects span full-stack web development, databases, and applied software engineering practices.',
+    ],
+    techStack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
   },
   {
-    role: 'Computer Science Student',
-    company: 'University',
+    degree: 'Bachelor of Informatics Engineering',
+    institution: 'Brawijaya University',
     location: 'Indonesia',
-    startDate: 'Sep 2021',
-    endDate: 'Present',
+    startDate: '2015',
+    endDate: '2019',
     description: [
-      'Relevant coursework: Data Structures, Algorithms, Web Development, Databases',
-      'Active in the coding club and hackathon community',
+      'Earned a Bachelor degree in Informatics Engineering, building foundations in software engineering, data structures, algorithms, and databases.',
     ],
-    techStack: ['Python', 'Java', 'C++'],
+    techStack: ['Java', 'C++', 'PHP', 'SQL'],
   },
 ];

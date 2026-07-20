@@ -59,33 +59,39 @@ export function Hero() {
           </div>
 
           <div className="mt-8 flex items-center gap-5">
-            <a
-              href={profile.social.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="GitHub"
-              className="text-gray-600 transition hover:text-accent"
-            >
-              <Github size={22} />
-            </a>
-            <a
-              href={profile.social.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="LinkedIn"
-              className="text-gray-600 transition hover:text-accent"
-            >
-              <Linkedin size={22} />
-            </a>
-            <a
-              href={profile.social.instagram}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Instagram"
-              className="text-gray-600 transition hover:text-accent"
-            >
-              <Instagram size={22} />
-            </a>
+            {profile.social.github && (
+              <a
+                href={profile.social.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="GitHub"
+                className="text-gray-600 transition hover:text-accent"
+              >
+                <Github size={22} />
+              </a>
+            )}
+            {profile.social.linkedin && (
+              <a
+                href={profile.social.linkedin}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="LinkedIn"
+                className="text-gray-600 transition hover:text-accent"
+              >
+                <Linkedin size={22} />
+              </a>
+            )}
+            {profile.social.instagram && (
+              <a
+                href={profile.social.instagram}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Instagram"
+                className="text-gray-600 transition hover:text-accent"
+              >
+                <Instagram size={22} />
+              </a>
+            )}
           </div>
 
           <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
@@ -111,10 +117,13 @@ export function Hero() {
             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500" />
 
             {/* Inner circle */}
-            <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-indigo-100">
-              <span className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-7xl font-bold text-transparent md:text-8xl">
-                {profile.initials}
-              </span>
+            <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-blue-50 to-indigo-100">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={profile.avatar}
+                alt={profile.name}
+                className="h-full w-full object-cover object-top"
+              />
             </div>
           </div>
         </div>

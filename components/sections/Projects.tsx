@@ -1,4 +1,5 @@
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { ExternalLink, Github, Folder, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Badge } from '@/components/ui/Badge';
 import { projects } from '@/data/projects';
@@ -15,19 +16,24 @@ export function Projects() {
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project) => (
             <article
-              key={project.title}
+              key={project.slug}
               className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="relative block aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100"
+              >
                 <div className="flex h-full items-center justify-center text-gray-400">
                   <Folder size={48} />
                 </div>
-              </div>
+              </Link>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-accent">
-                  {project.title}
-                </h3>
+                <Link href={`/projects/${project.slug}`}>
+                  <h3 className="text-lg font-semibold text-gray-900 transition group-hover:text-accent">
+                    {project.title}
+                  </h3>
+                </Link>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
                   {project.description}
                 </p>
@@ -38,7 +44,14 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-4 flex items-center gap-4 border-t border-gray-100 pt-4">
+                <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-gray-100 pt-4">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition hover:text-accent-dark"
+                  >
+                    View Details
+                    <ArrowRight size={14} />
+                  </Link>
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
