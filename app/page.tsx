@@ -1,8 +1,25 @@
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { Hero } from '@/components/sections/Hero';
+import { About } from '@/components/sections/About';
+import { Experience } from '@/components/sections/Experience';
+import { Projects } from '@/components/sections/Projects';
+import { Skills } from '@/components/sections/Skills';
+import { Contact } from '@/components/sections/Contact';
+
 export default function Home() {
   return (
-    <main className="container-narrow py-20">
-      <h1 className="text-4xl font-bold">Imam Nurhidayat</h1>
-      <p className="mt-4 text-gray-600">Portfolio coming soon.</p>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
