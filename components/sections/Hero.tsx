@@ -1,16 +1,39 @@
-import { Download, Mail, Github, Linkedin, Instagram, MapPin } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, Instagram, MapPin, Sparkles } from 'lucide-react';
 import { profile } from '@/data/profile';
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center pt-16">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center overflow-hidden pt-16"
+    >
+      {/* Base gradient background */}
+      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/60" />
+
+      {/* Decorative gradient blobs */}
+      <div className="absolute -top-32 -left-32 -z-10 h-96 w-96 rounded-full bg-blue-300/40 blur-3xl" />
+      <div className="absolute top-1/3 -right-32 -z-10 h-96 w-96 rounded-full bg-indigo-300/40 blur-3xl" />
+      <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-purple-200/30 blur-3xl" />
+
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)]" />
+
       <div className="container-narrow grid w-full grid-cols-1 items-center gap-12 py-16 md:grid-cols-2">
         <div className="animate-fade-in">
-          <p className="text-base font-medium text-accent">Hi there, I'm</p>
+          {/* Status badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-blue-700 shadow-sm backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+            </span>
+            Available for opportunities
+          </div>
+
+          <p className="mt-6 text-base font-medium text-accent">Hi there, I'm</p>
           <h1 className="mt-2 text-5xl font-bold tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
             {profile.name}
           </h1>
-          <h2 className="mt-4 text-2xl font-semibold text-gray-700 md:text-3xl">
+          <h2 className="mt-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-2xl font-semibold text-transparent md:text-3xl">
             {profile.title}
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-600 md:text-lg">
@@ -21,14 +44,14 @@ export function Hero() {
             <a
               href={profile.resumeUrl}
               download
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-hover hover:shadow-md"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:shadow-lg hover:from-blue-700 hover:to-indigo-700"
             >
               <Download size={16} />
               Download CV
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-900 transition hover:border-accent hover:text-accent"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm backdrop-blur-sm transition hover:border-accent hover:text-accent"
             >
               <Mail size={16} />
               Contact Me
@@ -68,31 +91,39 @@ export function Hero() {
           <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
             <MapPin size={14} />
             <span>{profile.location}</span>
-            {profile.available && (
-              <>
-                <span className="mx-2">•</span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-                  </span>
-                  Available for work
-                </span>
-              </>
-            )}
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-end">
+        {/* Avatar with gradient ring and floating elements */}
+        <div className="relative flex justify-center md:justify-end">
+          {/* Floating decorative elements */}
+          <div className="absolute -top-4 right-4 -z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-lg ring-1 ring-gray-200 animate-fade-in md:-right-8">
+            <Sparkles className="h-5 w-5 text-indigo-500" />
+          </div>
+          <div className="absolute -bottom-2 left-4 -z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-lg ring-1 ring-gray-200 animate-fade-in md:-left-8">
+            <span className="text-xs font-bold text-blue-600">{'</>'}</span>
+          </div>
+
+          {/* Main avatar with gradient ring */}
           <div className="relative h-64 w-64 md:h-80 md:w-80">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-blue-400 opacity-20 blur-2xl" />
-            <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-gray-100 ring-1 ring-gray-200">
-              <span className="text-7xl font-bold text-accent md:text-8xl">
+            {/* Gradient ring */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 opacity-90 blur-sm" />
+            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500" />
+
+            {/* Inner circle */}
+            <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-indigo-100">
+              <span className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-7xl font-bold text-transparent md:text-8xl">
                 {profile.initials}
               </span>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-fade-in flex-col items-center gap-1 text-xs text-gray-400 md:flex">
+        <span>Scroll</span>
+        <div className="h-8 w-px bg-gradient-to-b from-gray-400 to-transparent" />
       </div>
     </section>
   );

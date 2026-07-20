@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -31,13 +31,18 @@ export function Navbar() {
       )}
     >
       <div className="container-narrow flex h-16 items-center justify-between">
+        {/* Logo: icon in gradient box */}
         <a
           href="#home"
-          className="text-xl font-bold tracking-tight text-gray-900"
+          className="group flex items-center gap-2"
+          aria-label="Home"
         >
-          Imam<span className="text-accent">.</span>
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md transition group-hover:shadow-lg group-hover:from-blue-700 group-hover:to-indigo-700">
+            <Code2 size={20} strokeWidth={2.5} />
+          </span>
         </a>
 
+        {/* Desktop nav */}
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -51,6 +56,7 @@ export function Navbar() {
           ))}
         </ul>
 
+        {/* Mobile menu button */}
         <button
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -61,6 +67,7 @@ export function Navbar() {
         </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
         <div className="border-t border-gray-200 bg-white md:hidden">
           <ul className="container-narrow flex flex-col gap-1 py-4">
