@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
       'Applied QA-minded delivery practices including test planning, regression testing, and code review to reduce release risk and improve software quality.',
       'Used LLM tools to accelerate debugging, documentation, and test case drafting, with manual validation aligned to government security and compliance requirements.',
     ],
-    techStack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'Oracle', 'PostgreSQL', 'Laravel', 'WordPress'],
+    techStack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'Oracle', 'PostgreSQL', 'MongoDB', 'Laravel'],
   },
   {
     role: 'Web Developer',
@@ -54,13 +54,13 @@ export const education: Education[] = [
     degree: 'Master of Information Technology',
     institution: 'University of Auckland',
     location: 'New Zealand',
-    startDate: '2025',
+    startDate: '2026',
     endDate: 'Expected 2027',
     description: [
       'Currently pursuing a Master of Information Technology at the University of Auckland.',
       'Coursework and projects span full-stack web development, databases, and applied software engineering practices.',
     ],
-    techStack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+    techStack: [],
   },
   {
     degree: 'Bachelor of Informatics Engineering',
@@ -71,6 +71,6 @@ export const education: Education[] = [
     description: [
       'Earned a Bachelor degree in Informatics Engineering, building foundations in software engineering, data structures, algorithms, and databases.',
     ],
-    techStack: ['Java', 'C++', 'PHP', 'SQL'],
+    techStack: [],
   },
 ];

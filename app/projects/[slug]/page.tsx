@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { ArrowLeft, ExternalLink, Github, Calendar, Briefcase, CheckCircle2, Folder } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Calendar, Briefcase, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { projects, type Project } from '@/data/projects';
 import { Badge } from '@/components/ui/Badge';
+import { ProjectSlider } from '@/components/ui/ProjectSlider';
 
 type Props = {
   params: { slug: string };
@@ -113,15 +114,20 @@ export default function ProjectDetailPage({ params }: Props) {
           )}
         </header>
 
-        {/* Cover image */}
-        <div className="mt-8 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50 to-gray-100">
-          <div className="flex flex-col items-center gap-3 text-gray-400">
-            <Folder size={56} />
-            <span className="text-xs font-medium text-gray-400">
-              Project preview coming soon
-            </span>
+        {/* Cover image gallery */}
+        {project.gallery && project.gallery.length > 0 ? (
+          <div className="mt-8">
+            <ProjectSlider images={project.gallery} title={project.title} />
           </div>
-        </div>
+        ) : (
+          <div className="mt-8 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50 to-gray-100">
+            <div className="flex flex-col items-center gap-3 text-gray-400">
+              <span className="text-xs font-medium text-gray-400">
+                Project preview coming soon
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Tech stack */}
         <section className="mt-10">
@@ -172,28 +178,6 @@ export default function ProjectDetailPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-          </section>
-        )}
-
-        {/* Gallery (optional) */}
-        {project.gallery && project.gallery.length > 0 && (
-          <section className="mt-10">
-            <h2 className="text-xl font-semibold text-gray-900">Gallery</h2>
-            <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {project.gallery.map((img, i) => (
-                <div
-                  key={i}
-                  className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={img}
-                    alt={`${project.title} screenshot ${i + 1}`}
-                    className="aspect-[16/9] w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
           </section>
         )}
 

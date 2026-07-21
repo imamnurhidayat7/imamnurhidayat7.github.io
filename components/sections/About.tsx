@@ -11,7 +11,7 @@ export function About() {
         />
 
         <div className="mx-auto mt-12 max-w-3xl">
-          <div className="space-y-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg">
+          <div className="space-y-4 text-justify text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg">
             {profile.bio.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}

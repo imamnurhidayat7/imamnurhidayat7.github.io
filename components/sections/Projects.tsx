@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Folder, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Images } from 'lucide-react';
 import Link from 'next/link';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Badge } from '@/components/ui/Badge';
@@ -23,8 +23,26 @@ export function Projects() {
                 href={`/projects/${project.slug}`}
                 className="relative block aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100 dark:from-blue-950 dark:to-gray-900"
               >
-                <div className="flex h-full items-center justify-center text-gray-400">
-                  <Folder size={48} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Gradient overlay for readability */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {/* Gallery count badge */}
+                {project.gallery && project.gallery.length > 0 && (
+                  <div className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                    <Images size={12} />
+                    {project.gallery.length}
+                  </div>
+                )}
+                {/* View detail hint */}
+                <div className="absolute bottom-3 left-3 inline-flex translate-y-2 items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-800 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 dark:bg-gray-900/90 dark:text-white">
+                  View case study
+                  <ArrowRight size={12} />
                 </div>
               </Link>
 
